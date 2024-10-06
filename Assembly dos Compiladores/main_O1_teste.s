@@ -1,6 +1,6 @@
 _Z9somaVetorPsi:
 .LFB0:
-	push ebx               
+	push ebx               # Salvando o registrador ebx na pilha
 
 	mov ecx, DWORD PTR 8[esp]  # Carrega o ponteiro do vetor (primeiro argumento) para ecx
 	mov edx, DWORD PTR 12[esp] # Carrega o tamanho do vetor (segundo argumento) para edx
@@ -30,3 +30,8 @@ _Z9somaVetorPsi:
 main:
 	mov eax, 0                 # Retorna 0 em main
 	ret                        # Fim da função main
+
+.LFE1:
+	.size main, .-main         # Define o tamanho da função main
+	.ident "GCC: (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0"  # Informação de versão do compilador
+	.section .note.GNU-stack,"",@progbits  # Definição de seção para GNU stack
